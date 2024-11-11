@@ -3,7 +3,7 @@ import React from 'react';
 const FooterComponent = () => {
   return (
     <div>
-   <footer className="bg-gray-800 shadow-lg shadow-black sm:pl-20 py-12 rounded-t-[125px]">
+   <footer className="bg-gray-800 shadow-lg shadow-black sm:pl-20 py-12 rounded-t-[100px]">
         <div className="flex flex-wrap justify-between px-6">
           {/* First Column: Logo with Anchor */}
           <div className="w-full sm:w-1/4 p-6 flex flex-col items-center">
