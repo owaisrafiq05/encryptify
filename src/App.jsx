@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen flex flex-col">
+    <div className="bg-gray-900 min-h-screen flex flex-col">
       <Router>
         {loading ? (
           <Loader />
