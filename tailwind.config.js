@@ -6,7 +6,16 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'], // Use Poppins for sans-serif
+        mono: ['Anonymous Pro', 'monospace'], // Use Anonymous Pro for monospaced text
+      },
+      backgroundImage: {
+        'custom-image': "url('https://img.freepik.com/premium-photo/intricate-cybersecurity-concept-illustration-unidentified-hacker-with-computer-interface_1135715-52.jpg')",
+      },
+
+    },
   },
   plugins: [],
 }
