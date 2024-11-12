@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home  from "./pages/Home"
+import VigenerePage from "./pages/Vigenere_page"
+
 import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; 
@@ -27,6 +29,8 @@ function App() {
             <div className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/vigenere" element={<VigenerePage />} />
+                
               </Routes>
             </div>
             <FooterComponent />
