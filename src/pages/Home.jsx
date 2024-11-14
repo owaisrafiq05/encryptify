@@ -10,6 +10,7 @@ const Home = () => {
   const [encryptedText, setEncryptedText] = useState(''); // State to hold encrypted text
   const [decryptedText, setDecryptedText] = useState(''); // State to hold decrypted text
   const [mode, setMode] = useState('Encrypt'); // State to handle encryption/decryption mode selection
+  const [copyStatus, setCopyStatus] = useState(false); // State to track if text is copied
 
   const processText = async () => {
     // Validate that user text and encryption key are provided
@@ -108,16 +109,23 @@ const Home = () => {
   const handleEncryptionKeyChange = (e) => setEncryptionKey(e.target.value);
   const handleModeChange = (e) => setMode(e.target.value);
 
+  // Handle copy to clipboard functionality
+  const handleCopy = () => {
+    const text = mode === 'Encrypt' ? encryptedText : decryptedText; // Get the relevant text based on mode
+    if (text) {
+      navigator.clipboard.writeText(text);
+      setCopyStatus(true); // Change button text to "Copied"
+      setTimeout(() => setCopyStatus(false), 2000); // Reset to "Copy" after 2 seconds
+    }
+  };
+
   return (
-    <div >
+    <div>
       <ToastContainer />
-      <section
-        className="bg-custom-image bg-cover bg-center contact relative min-h-screen p-12 flex justify-center items-center flex-col bg-cover bg-center bg-gray-900"
-        
-      >
+      <section className="bg-custom-image bg-cover bg-center contact relative min-h-screen p-12 flex justify-center items-center flex-col bg-cover bg-center bg-gray-900">
         <div className="container flex justify-center items-center mt-12 space-x-12">
-          <div className="contactForm w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl" >
-            <h2 className="text-2xl text-gray-100 font-medium mb-6">Text Encryption</h2>
+          <div className="contactForm w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl">
+            <h2 className="text-2xl text-gray-100 font-medium mb-6">Caèsar Cipher</h2>
 
             {/* Mode Dropdown */}
             <div className="inputBox w-full mb-6">
@@ -187,7 +195,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl">
+          <div className="w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl relative">
             <h3 className="text-xl font-medium text-gray-100">Result:</h3>
 
             {/* Display Encrypted or Decrypted Text */}
@@ -208,6 +216,16 @@ const Home = () => {
                 rows="8"
               />
             )}
+
+            {/* Copy Button - Positioned at the top right, moved slightly left with fade effect */}
+            <button
+              onClick={handleCopy}
+              className={`absolute top-4 right-8 py-1 px-2 text-sm cursor-pointer rounded transition-all duration-500 ${
+                copyStatus ? 'bg-teal-700 text-gray-100' : 'bg-teal-600 text-white'
+              }`}
+            >
+              {copyStatus ? 'Copied' : 'Copy'}
+            </button>
           </div>
         </div>
       </section>

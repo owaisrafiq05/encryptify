@@ -4,54 +4,20 @@ import { toast, ToastContainer, Bounce } from 'react-toastify';
 import { base_url } from '../config/index.js'; // Update this path if necessary
 import 'react-toastify/dist/ReactToastify.css';
 
-const VernamPage = () => {
+const RailFencePage = () => {
   const [userText, setUserText] = useState(''); // State to hold user input text
-  const [encryptionKey, setEncryptionKey] = useState(''); // State to hold encryption key (now a string)
+  const [numRows, setNumRows] = useState(3); // State to hold number of rows for Rail-Fence Cipher
   const [encryptedText, setEncryptedText] = useState(''); // State to hold encrypted text
   const [decryptedText, setDecryptedText] = useState(''); // State to hold decrypted text
   const [mode, setMode] = useState('Encrypt'); // State to handle encryption/decryption mode selection
 
   // Process the text (Encrypt or Decrypt based on mode)
   const processText = async () => {
-    // Validate that user text and encryption key are provided
-    if (!userText || !encryptionKey) {
+    // Validate that user text is provided and numRows is valid
+    if (!userText || !numRows || numRows < 2) {
       setEncryptedText('');
       setDecryptedText('');
-      toast.error("Please provide both text and encryption key.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-        transition: Bounce,
-      });
-      return;
-    }
-
-    // Ensure encryptionKey is a valid string (not empty)
-    if (!encryptionKey.trim()) {
-      setEncryptedText('');
-      setDecryptedText('');
-      toast.error("Encryption key must be a non-empty string.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-        transition: Bounce,
-      });
-      return;
-    }
-
-    // Ensure that the text and key are of the same length (Vernam Cipher requirement)
-    if (userText.length !== encryptionKey.length) {
-      setEncryptedText('');
-      setDecryptedText('');
-      toast.error("Text and key must be of equal length for Vernam cipher.", {
+      toast.error("Please provide valid text and number of rows (greater than 1).", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -67,18 +33,21 @@ const VernamPage = () => {
     try {
       const payload = {
         text: userText,
-        key: encryptionKey.trim(), // Use the string key for Vernam cipher
+        numRows: numRows, // Pass the number of rows for Rail-Fence Cipher
       };
 
-      const endpoint = mode === 'Encrypt' ? '/vernam-encrypt' : '/vernam-decrypt'; // Update endpoint to Vernam cipher
+      const endpoint = mode === 'Encrypt' ? '/rail-fence-encrypt' : '/rail-fence-decrypt'; // Choose endpoint based on mode
       const response = await axios.post(`${base_url}${endpoint}`, payload);
+
+      // Log the entire response object to check structure
+      console.log(response.data);
 
       if (response.data.status) {
         if (mode === 'Encrypt') {
-          setEncryptedText(response.data.encryptedText); // Set encrypted text
+          setEncryptedText(response.data.data.encryptedText); // Set encrypted text
           setDecryptedText(''); // Clear decrypted text
         } else {
-          setDecryptedText(response.data.decryptedText); // Set decrypted text
+          setDecryptedText(response.data.data.decryptedText); // Set decrypted text
           setEncryptedText(''); // Clear encrypted text
         }
 
@@ -122,9 +91,9 @@ const VernamPage = () => {
     }
   };
 
-  // Handle changes to text and key
+  // Handle changes to text and number of rows
   const handleUserTextChange = (e) => setUserText(e.target.value);
-  const handleEncryptionKeyChange = (e) => setEncryptionKey(e.target.value);
+  const handleNumRowsChange = (e) => setNumRows(Number(e.target.value)); // Ensure numRows is a number
   const handleModeChange = (e) => setMode(e.target.value);
 
   return (
@@ -135,7 +104,7 @@ const VernamPage = () => {
       >
         <div className="container flex justify-center items-center mt-12 space-x-12">
           <div className="contactForm w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl">
-            <h2 className="text-2xl text-gray-100 font-medium mb-6">Vernam Cipher</h2>
+            <h2 className="text-2xl text-gray-100 font-medium mb-6">Rail-Fence Cipher</h2>
 
             {/* Mode Dropdown */}
             <div className="inputBox w-full mb-6">
@@ -174,22 +143,22 @@ const VernamPage = () => {
 
               <div className="inputBox relative w-full">
                 <input
-                  type="text"
-                  value={encryptionKey}
-                  onChange={handleEncryptionKeyChange}
+                  type="number"
+                  value={numRows}
+                  onChange={handleNumRowsChange}
                   className="w-full p-2 text-base border-b-2 border-gray-600 outline-none focus:border-teal-400 
                            bg-transparent text-gray-100 peer"
-                  id="encryptionKey"
+                  id="numRows"
                   placeholder=" "
                   required
                 />
                 <label
-                  htmlFor="encryptionKey"
+                  htmlFor="numRows"
                   className="absolute left-0 -top-3.5 text-gray-400 text-sm transition-all duration-200 ease-in-out 
                            peer-placeholder-shown:text-base peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 
                            peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-teal-400"
                 >
-                  Enter Encryption Key
+                  Number of Rows
                 </label>
               </div>
             </div>
@@ -233,4 +202,4 @@ const VernamPage = () => {
   );
 };
 
-export default VernamPage;
+export default RailFencePage;
