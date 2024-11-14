@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home  from "./pages/Home"
-import VigenerePage from "./pages/Vigenere_page"
-
+import Home from "./pages/Home";
+import VigenerePage from "./pages/Vigenere_page";
+import PlayfairPage from "./pages/Playfair_page"; // Ensure this import is correct
 import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; 
@@ -30,7 +30,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/vigenere" element={<VigenerePage />} />
-                
+                <Route path="/playfair" element={<PlayfairPage />} /> {/* Added PlayfairPage route */}
               </Routes>
             </div>
             <FooterComponent />

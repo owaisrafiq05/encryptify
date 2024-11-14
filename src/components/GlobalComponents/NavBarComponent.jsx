@@ -103,7 +103,7 @@ const NavBarComponent = () => {
             </li>
             <li>
             <button
-                onClick={() => handleNavigation('/')}
+                onClick={() => handleNavigation('/Playfair')}
                 className="w-full flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-600 hover:text-black group"
               >
                 <svg className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 22 21">
