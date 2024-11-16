@@ -4,6 +4,7 @@ import VigenerePage from "./pages/Vigenere_page"
 import VernamPage from "./pages/Vernam_page";
 import RailFencePage from "./pages/Rail_Fence_page";
 import PlayfairPage from "./pages/Playfair_page";
+import RsaPage from "./pages/Rsa_page";
 import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; 
@@ -35,7 +36,8 @@ function App() {
                 <Route path="/vernam" element={<VernamPage />} />
                 <Route path="/railfence" element={<RailFencePage />} />
                 <Route path="/play-fair" element={<PlayfairPage/>} />
-              </Routes>
+                <Route path="/Rsa" element={<RsaPage/>} />
+                </Routes>
             </div>
             <FooterComponent />
           </>
