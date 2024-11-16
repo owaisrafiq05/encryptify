@@ -83,7 +83,7 @@ const RsaPage = () => {
       <section className="bg-custom-image bg-cover bg-center bg-gray-900 min-h-screen flex items-center justify-center p-8">
         <div className="grid grid-cols-2 gap-6 w-full max-w-6xl">
           {/* Left Section (Input) */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div className="bg-gray-800 bg-opacity-80 p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl text-gray-100 mb-6">RSA Input</h2>
 
             {/* Mode Selector */}
@@ -163,7 +163,7 @@ const RsaPage = () => {
           </div>
 
           {/* Right Section (Results) */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg bg-opacity-80">
             <h2 className="text-2xl text-gray-100 mb-6">RSA Result</h2>
 
             {/* Display ciphertext, d, and n after encryption */}
