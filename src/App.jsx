@@ -4,6 +4,10 @@ import VigenerePage from "./pages/Vigenere_page"
 import VernamPage from "./pages/Vernam_page";
 import RailFencePage from "./pages/Rail_Fence_page";
 import PlayfairPage from "./pages/Playfair_page";
+import HexadecimalPage from "./pages/Hexadecimal_page";
+import DecimalPage from "./pages/Decimal_page";
+import OctalPage from "./pages/Octal_page";
+import BinaryPage from "./pages/Binary_page";
 import RsaPage from "./pages/Rsa_page";
 import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
@@ -37,6 +41,10 @@ function App() {
                 <Route path="/railfence" element={<RailFencePage />} />
                 <Route path="/play-fair" element={<PlayfairPage/>} />
                 <Route path="/Rsa" element={<RsaPage/>} />
+                <Route path="/Hexadecimal" element={<HexadecimalPage/>} />
+                <Route path="/Decimal" element={<DecimalPage/>} />
+                <Route path="/Octal" element={<OctalPage/>} />
+                <Route path="/Binary" element={<BinaryPage/>} />
                 </Routes>
             </div>
             <FooterComponent />

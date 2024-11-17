@@ -202,10 +202,11 @@ const RsaPage = () => {
                 <div className="mb-4">
                   <label className="block text-gray-400 mb-2">Decrypted Text:</label>
                   <textarea
-                    className="w-full p-2 bg-gray-700 text-gray-100 rounded focus:border-teal-400"
+                  draggable="false"
+                    className="w-full p-2 bg-gray-700  text-gray-100 rounded focus:border-teal-400"
                     value={decryptedText}
                     readOnly
-                    rows="5"
+                    rows="8"
                   />
                 </div>
               </div>

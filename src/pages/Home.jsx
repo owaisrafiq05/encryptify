@@ -123,6 +123,7 @@ const Home = () => {
     <div>
       <ToastContainer />
       <section className="bg-custom-image bg-cover bg-center contact relative min-h-screen p-12 flex justify-center items-center flex-col bg-cover bg-center bg-gray-900">
+        
         <div className="container flex justify-center items-center mt-12 space-x-12">
           <div className="contactForm w-1/2 p-10 bg-gray-800 bg-opacity-80 flex flex-col space-y-6 rounded-lg shadow-xl">
             <h2 className="text-2xl text-gray-100 font-medium mb-6">Caèsar Cipher</h2>
