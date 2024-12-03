@@ -13,6 +13,7 @@ import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; 
 import { useState, useEffect } from 'react';
+import SHA0 from "./pages/SHA-0";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ function App() {
                 <Route path="/Decimal" element={<DecimalPage/>} />
                 <Route path="/Octal" element={<OctalPage/>} />
                 <Route path="/Binary" element={<BinaryPage/>} />
+                <Route path="/Sha0" element={<SHA0/>}/>
                 </Routes>
             </div>
             <FooterComponent />
