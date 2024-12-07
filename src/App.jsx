@@ -9,6 +9,9 @@ import DecimalPage from "./pages/Decimal_page";
 import OctalPage from "./pages/Octal_page";
 import BinaryPage from "./pages/Binary_page";
 import RsaPage from "./pages/Rsa_page";
+import DesPage from "./pages/DES_page"
+import TripleDesPage from "./pages/Triple-DES_Page"
+import AESPage from "./pages/AES_Page"
 import NavBarComponent from "./components/GlobalComponents/NavBarComponent";
 import FooterComponent from "./components/GlobalComponents/FooterComponent";
 import Loader from "./components/GlobalComponents/LoaderComponent"; 
@@ -43,6 +46,9 @@ function App() {
                 <Route path="/railfence" element={<RailFencePage />} />
                 <Route path="/play-fair" element={<PlayfairPage/>} />
                 <Route path="/Rsa" element={<RsaPage/>} />
+                <Route path="/Des" element={<DesPage/>} />
+                <Route path="/Triple-Des" element={<TripleDesPage/>} />
+                <Route path="/Aes" element={<AESPage/>} />
                 <Route path="/Hexadecimal" element={<HexadecimalPage/>} />
                 <Route path="/Decimal" element={<DecimalPage/>} />
                 <Route path="/Octal" element={<OctalPage/>} />
