@@ -15,6 +15,7 @@ import Loader from "./components/GlobalComponents/LoaderComponent";
 import { useState, useEffect } from 'react';
 import SHA0 from "./pages/SHA-0";
 import SHA1 from "./pages/SHA-1";
+import SHA512 from "./pages/SHA-512";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/Binary" element={<BinaryPage/>} />
                 <Route path="/Sha0" element={<SHA0/>}/>
                 <Route path="/Sha1" element={<SHA1/>}/>
+                <Route path="/Sha512" element={<SHA512/>}/>
                 </Routes>
             </div>
             <FooterComponent />
