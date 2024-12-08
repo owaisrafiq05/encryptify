@@ -1,2 +1,2 @@
 // src/config/index.js
-export const base_url = 'http://localhost:5000';
+export const base_url = 'https://encryptify-backend.vercel.app';
