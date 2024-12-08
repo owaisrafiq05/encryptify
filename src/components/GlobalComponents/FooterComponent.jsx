@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import 'animate.css';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const FooterComponent = () => {
   const footerRef = useRef(null);
@@ -14,10 +15,12 @@ const FooterComponent = () => {
           {/* First Column: Logo with Anchor */}
           <div className="w-full sm:w-1/4 p-6 flex flex-col items-center">
             <a href="/" className="flex items-center justify-center">
-            <span className="self-center text-4xl font-semibold sm:text-2xl whitespace-nowrap text-white">
-                  ENCRYPTIFY
-            </span>
-            <p className='text-white'>web-based application focused on encryption, decryption, and data conversion tools. It provides users with an interactive platform to explore various cryptographic algorithms and hashing techniques, inspired by the functionality of CyberChef.</p>
+              <span className="self-center text-4xl font-semibold sm:text-2xl whitespace-nowrap text-white">
+                ENCRYPTIFY
+              </span>
+              <p className='text-white'>
+                web-based application focused on encryption, decryption, and data conversion tools. It provides users with an interactive platform to explore various cryptographic algorithms and hashing techniques, inspired by the functionality of CyberChef.
+              </p>
             </a>
           </div>
 
@@ -35,12 +38,13 @@ const FooterComponent = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="about.html"
+                  {/* Corrected Link to navigate to AboutDevelopers page */}
+                  <Link
+                    to="/about"
                     className="text-gray-300 hover:text-teal-400 transition-colors duration-200 transform hover:scale-105"
                   >
                     About the Developers
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

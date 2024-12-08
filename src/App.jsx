@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home  from "./pages/Home"
+import AboutDevelopers from "./pages/About_Developers";
 import VigenerePage from "./pages/Vigenere_page"
 import VernamPage from "./pages/Vernam_page";
 import RailFencePage from "./pages/Rail_Fence_page";
@@ -66,6 +67,7 @@ function App() {
                 <Route path="/Sha224" element={<SHA224/>}/>
                 <Route path="/Sha384" element={<SHA384/>}/>
                 <Route path="/Sha256" element={<SHA256/>}/>
+                <Route path="/About" element={<AboutDevelopers/>}/>
                
                 </Routes>
             </div>

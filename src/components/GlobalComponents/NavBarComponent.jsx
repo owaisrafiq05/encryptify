@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RiCodeView } from "react-icons/ri";
 import HamBurger from "../../assets/hamburger.svg"
 
+
 const NavBarComponent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
@@ -41,9 +42,11 @@ const NavBarComponent = () => {
                 </span>
               </a>
             </div>
-            <button class="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-teal-50 bg-[#111827] ring-4 ring-teal-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-teal-50/10 before:blur-xl">
-              About Developers <span className="text-2xl"><RiCodeView /></span>
-            </button>
+            <Link to="/about">
+  <button className="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-teal-50 bg-[#111827] ring-4 ring-teal-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-teal-50/10 before:blur-xl">
+    About Developers <span className="text-2xl"><RiCodeView /></span>
+  </button>
+</Link>
           </div>
         </div>
       </nav>
