@@ -20,6 +20,9 @@ import SHA0 from "./pages/SHA-0";
 import SHA1 from "./pages/SHA-1";
 import SHA512 from "./pages/SHA-512";
 import SHA224 from "./pages/SHA-224";
+import SHA384 from "./pages/SHA-384"
+import SHA256 from "./pages/SHA-256";
+import SHA3 from "./pages/SHA-3";
 
 
 function App() {
@@ -58,8 +61,11 @@ function App() {
                 <Route path="/Binary" element={<BinaryPage/>} />
                 <Route path="/Sha0" element={<SHA0/>}/>
                 <Route path="/Sha1" element={<SHA1/>}/>
+                <Route path="/Sha3" element={<SHA3/>}/>
                 <Route path="/Sha512" element={<SHA512/>}/>
                 <Route path="/Sha224" element={<SHA224/>}/>
+                <Route path="/Sha384" element={<SHA384/>}/>
+                <Route path="/Sha256" element={<SHA256/>}/>
                
                 </Routes>
             </div>
