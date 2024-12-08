@@ -12,7 +12,7 @@ export default {
         mono: ['Anonymous Pro', 'monospace'], // Use Anonymous Pro for monospaced text
       },
       backgroundImage: {
-        'custom-image': "url('https://img.freepik.com/premium-photo/intricate-cybersecurity-concept-illustration-unidentified-hacker-with-computer-interface_1135715-52.jpg')",
+        'custom-image': "url('https://www.pwc.com/mt/en/services/cyber-security/cyber-attack-.gif')",
       },
 
     },
